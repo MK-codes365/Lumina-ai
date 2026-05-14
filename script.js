@@ -52,17 +52,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Reveal on Scroll Animation (Hardware Accelerated)
     const revealElements = document.querySelectorAll('.reveal');
+    
+    // Fallback: If elements are still hidden after 2 seconds, show them anyway
+    setTimeout(() => {
+        revealElements.forEach(el => {
+            if (!el.classList.contains('active')) {
+                el.classList.add('active');
+            }
+        });
+    }, 2000);
+
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Use requestAnimationFrame for smoother performance
                 requestAnimationFrame(() => {
                     entry.target.classList.add('active');
                 });
                 revealObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { 
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px' // Trigger slightly before it enters the viewport
+    });
 
     revealElements.forEach(el => {
         revealObserver.observe(el);
