@@ -45,7 +45,7 @@ Lumina-AI-Website/
 
 1. Clone the repository.
 2. Open `index.html` in any modern web browser.
-3. Experience the future of AI-driven design.
+
 
 ---
-Created with ❤️ by **Antigravity AI**
+Created with ❤️ by **Mukut**
