@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Lumina — Creative AI Design Agency</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050508',
+                        primary: '#A855F7',
+                        secondary: '#6366f1',
+                    },
+                    fontFamily: {
+                        heading: ['Sora', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glass { @apply bg-white/5 backdrop-blur-lg border border-white/10; }
+            .text-gradient { @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary; }
+            .reveal { @apply opacity-0 translate-y-8 transition-all duration-700 ease-out; }
+            .reveal.active { @apply opacity-100 translate-y-0; }
+        }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-dark text-white font-sans selection:bg-primary/30">
+
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 py-6 transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 no-underline group">
+                <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
+                    <i data-lucide="zap" class="w-7 h-7 text-white fill-white/20"></i>
+                </div>
+                <span class="font-heading font-bold text-2xl tracking-tighter text-white">LUMINA<span class="text-primary">.</span></span>
+            </a>
+            <ul class="hidden md:flex gap-8 list-none">
+                <li><a href="index.html" class="text-slate-400 hover:text-white">Home</a></li>
+                <li><a href="about.html" class="text-slate-400 hover:text-white">About</a></li>
+                <li><a href="services.html" class="text-slate-400 hover:text-white">Services</a></li>
+                <li><a href="contact.html" class="text-primary font-medium">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-20 container mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-20">
+            <div class="reveal">
+                <span class="text-primary font-bold tracking-[0.2em] text-sm mb-4 block">CONTACT US</span>
+                <h1 class="font-heading text-5xl md:text-7xl font-bold mb-8 leading-tight">Get in <span class="text-gradient">Touch</span></h1>
+                <p class="text-slate-400 text-lg mb-12">Ready to start your next project? Fill out the form or reach out directly.</p>
+                
+                <div class="space-y-8">
+                    <div class="flex gap-6 items-start">
+                        <div class="w-12 h-12 glass rounded-xl flex items-center justify-center text-primary shrink-0"><i data-lucide="mail"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Email Us</h4>
+                            <p class="text-slate-400">hello@lumina.agency</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start">
+                        <div class="w-12 h-12 glass rounded-xl flex items-center justify-center text-primary shrink-0"><i data-lucide="map-pin"></i></div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Our Studio</h4>
+                            <p class="text-slate-400">123 Innovation Dr, San Francisco, CA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass p-10 rounded-[2.5rem] reveal" style="transition-delay: 100ms">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-400">First Name</label>
+                            <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-400">Last Name</label>
+                            <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary">
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-semibold text-slate-400">Email</label>
+                        <input type="email" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-semibold text-slate-400">Message</label>
+                        <textarea rows="5" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary"></textarea>
+                    </div>
+                    <button class="w-full bg-primary py-4 rounded-xl font-bold text-lg shadow-xl shadow-primary/20">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

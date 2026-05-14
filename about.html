@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Lumina — Creative AI Design Agency</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050508',
+                        primary: '#A855F7',
+                        secondary: '#6366f1',
+                    },
+                    fontFamily: {
+                        heading: ['Sora', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glass {
+                @apply bg-white/5 backdrop-blur-lg border border-white/10;
+            }
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+            }
+            .reveal {
+                @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+            }
+            .reveal.active {
+                @apply opacity-100 translate-y-0;
+            }
+        }
+    </style>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-dark text-white font-sans selection:bg-primary/30">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 py-6 transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 no-underline group">
+                <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
+                    <i data-lucide="zap" class="w-7 h-7 text-white fill-white/20"></i>
+                </div>
+                <span class="font-heading font-bold text-2xl tracking-tighter text-white">LUMINA<span class="text-primary">.</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-10">
+                <ul class="flex gap-8 list-none">
+                    <li><a href="index.html" class="text-slate-400 hover:text-white transition-colors">Home</a></li>
+                    <li><a href="about.html" class="text-primary font-medium">About</a></li>
+                    <li><a href="services.html" class="text-slate-400 hover:text-white transition-colors">Services</a></li>
+                    <li><a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="bg-primary px-6 py-2.5 rounded-full font-semibold transition-all hover:scale-105">Start a Project</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="pt-40 pb-20 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <span class="text-primary font-bold tracking-[0.2em] text-sm mb-4 block reveal">ABOUT US</span>
+            <h1 class="font-heading text-5xl md:text-7xl font-bold leading-tight max-w-4xl reveal">
+                Merging Human Intuition with <span class="text-gradient">Artificial Intelligence</span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+            <div class="reveal">
+                <h2 class="font-heading text-4xl font-bold mb-8">From Vision to <span class="text-gradient">Revolution</span></h2>
+                <div class="space-y-6 text-slate-400 text-lg leading-relaxed">
+                    <p>Founded in 2023, Lumina was born from a simple belief: the most extraordinary creative work happens when human intuition meets the computational power of artificial intelligence.</p>
+                    <p>We assemble world-class designers, engineers, and strategists to build a new kind of agency, one where every pixel is informed by data and every brand story is amplified by machine intelligence.</p>
+                </div>
+            </div>
+            <div class="relative reveal">
+                <div class="aspect-square glass rounded-[3rem] p-12 flex items-center justify-center relative overflow-hidden">
+                    <div class="w-full h-full border-4 border-dashed border-primary/20 rounded-full animate-[spin_20s_linear_infinite]"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i data-lucide="cpu" class="w-24 h-24 text-primary animate-pulse"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section class="py-20 bg-white/[0.02]">
+        <div class="container mx-auto px-6">
+            <h2 class="font-heading text-4xl font-bold text-center mb-16">Our Core <span class="text-gradient">Values</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-10 rounded-3xl reveal">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6"><i data-lucide="zap"></i></div>
+                    <h3 class="text-2xl font-bold mb-4">Innovation First</h3>
+                    <p class="text-slate-400">We push the boundaries of what's possible with the latest generative AI models.</p>
+                </div>
+                <div class="glass p-10 rounded-3xl reveal" style="transition-delay: 100ms">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6"><i data-lucide="shield-check"></i></div>
+                    <h3 class="text-2xl font-bold mb-4">Ethical AI</h3>
+                    <p class="text-slate-400">Transparency, fairness, and human oversight are embedded in every project.</p>
+                </div>
+                <div class="glass p-10 rounded-3xl reveal" style="transition-delay: 200ms">
+                    <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6"><i data-lucide="user"></i></div>
+                    <h3 class="text-2xl font-bold mb-4">Human Centric</h3>
+                    <p class="text-slate-400">Technology serves people. We design interfaces that are intuitive and delightful.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-20 pb-10 border-t border-white/5">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-slate-500">&copy; 2026 Lumina AI Agency. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

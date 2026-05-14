@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina — Creative AI Design Agency</title>
+    <meta name="description" content="Lumina is a next-gen creative AI design agency empowering brands with AI-driven creativity.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050508',
+                        'dark-card': 'rgba(255, 255, 255, 0.03)',
+                        primary: '#A855F7',
+                        secondary: '#6366f1',
+                    },
+                    fontFamily: {
+                        heading: ['Sora', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glass {
+                @apply bg-white/5 backdrop-blur-lg border border-white/10;
+            }
+            .glass-hover {
+                @apply hover:bg-white/10 hover:border-white/20 transition-all duration-500;
+            }
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+            }
+            .reveal {
+                @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+            }
+            .reveal.active {
+                @apply opacity-100 translate-y-0;
+            }
+        }
+    </style>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-dark text-white font-sans selection:bg-primary/30">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-6">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 no-underline group">
+                <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
+                    <i data-lucide="zap" class="w-7 h-7 text-white fill-white/20"></i>
+                </div>
+                <span class="font-heading font-bold text-2xl tracking-tighter text-white">LUMINA<span class="text-primary">.</span></span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-10">
+                <ul class="flex gap-8 list-none">
+                    <li><a href="index.html" class="text-primary font-medium">Home</a></li>
+                    <li><a href="about.html" class="text-slate-400 hover:text-white transition-colors">About</a></li>
+                    <li><a href="services.html" class="text-slate-400 hover:text-white transition-colors">Services</a></li>
+                    <li><a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full font-semibold transition-all hover:-translate-y-0.5 active:translate-y-0 shadow-lg shadow-primary/25">
+                    Start a Project
+                </a>
+            </div>
+
+            <button class="md:hidden text-white" id="mobile-toggle">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Background Glows -->
+        <div class="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] animate-pulse-slow"></div>
+        <div class="absolute -bottom-[20%] -left-[10%] w-[600px] h-[600px] bg-secondary/20 rounded-full blur-[120px] animate-pulse-slow" style="animation-delay: 2s"></div>
+
+        <div class="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-primary text-sm font-bold tracking-wide mb-8 reveal">
+                    <span class="w-2 h-2 bg-primary rounded-full animate-ping"></span>
+                    AI-POWERED CREATIVITY
+                </div>
+                <h1 class="font-heading text-6xl md:text-8xl font-bold leading-[1.1] mb-8 reveal">
+                    Design at the<br>
+                    <span class="text-gradient">Speed of Thought</span>
+                </h1>
+                <p class="text-slate-400 text-xl md:text-2xl max-w-2xl mb-12 leading-relaxed reveal">
+                    Empowering brands with AI-driven creativity and precision. We merge human intuition with artificial intelligence to craft extraordinary digital experiences.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 reveal">
+                    <a href="contact.html" class="bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 transition-all hover:-translate-y-1 shadow-2xl shadow-primary/30 group">
+                        Start Your Project
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="services.html" class="glass glass-hover px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center">
+                        View Services
+                    </a>
+                </div>
+            </div>
+            <div class="relative hidden md:block reveal">
+                <img src="assets/hero.png" alt="AI Neural Art" class="w-full h-auto rounded-[3rem] shadow-2xl shadow-primary/20 animate-[bounce_5s_infinite_ease-in-out]">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="py-32 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-primary font-bold tracking-[0.2em] text-sm mb-4 block">WHAT WE DO</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6">Core <span class="text-gradient">Services</span></h2>
+                <p class="text-slate-400 text-lg">From concept to launch, we leverage AI to deliver world-class creative solutions at unprecedented speed.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass glass-hover p-8 rounded-[2rem] reveal group tilt-card transition-transform duration-200">
+                    <div class="relative h-48 mb-8 rounded-2xl overflow-hidden">
+                        <img src="assets/ui-ux.png" alt="UI UX" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent"></div>
+                    </div>
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                        <i data-lucide="layout" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 font-heading">AI UI/UX Design</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">Cutting-edge interfaces generated with AI precision and pixel-perfect accuracy.</p>
+                    <a href="services.html" class="text-primary font-bold flex items-center gap-2">
+                        Learn More <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass glass-hover p-8 rounded-[2rem] reveal group tilt-card transition-transform duration-200" style="transition-delay: 100ms">
+                    <div class="relative h-48 mb-8 rounded-2xl overflow-hidden">
+                        <img src="assets/branding.png" alt="Branding" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent"></div>
+                    </div>
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                        <i data-lucide="palette" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 font-heading">Generative Branding</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">AI-crafted identities that resonate with your target market through data-driven creativity.</p>
+                    <a href="services.html" class="text-primary font-bold flex items-center gap-2">
+                        Learn More <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass glass-hover p-8 rounded-[2rem] reveal group tilt-card transition-transform duration-200" style="transition-delay: 200ms">
+                    <div class="relative h-48 mb-8 rounded-2xl overflow-hidden">
+                        <img src="assets/motion.png" alt="Motion" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent"></div>
+                    </div>
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                        <i data-lucide="play-circle" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 font-heading">Motion Graphics</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">Dynamic visual storytelling powered by AI-assisted animations and 3D renders.</p>
+                    <a href="services.html" class="text-primary font-bold flex items-center gap-2">
+                        Learn More <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-20 pb-10 border-t border-white/5 bg-dark">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-20">
+                <div class="col-span-2">
+                    <a href="#" class="flex items-center gap-3 mb-6 no-underline text-white">
+                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                            <i data-lucide="sparkles" class="w-5 h-5"></i>
+                        </div>
+                        <span class="font-heading font-bold text-xl">LUMINA</span>
+                    </a>
+                    <p class="text-slate-400 max-w-sm text-lg leading-relaxed">
+                        AI-powered creativity for the brands of tomorrow. We merge human intuition with machine intelligence to build extraordinary experiences.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold mb-6 text-lg">Navigation</h4>
+                    <ul class="space-y-4 list-none p-0">
+                        <li><a href="index.html" class="text-slate-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-slate-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="services.html" class="text-slate-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading font-bold mb-6 text-lg">Stay Updated</h4>
+                    <form class="space-y-4">
+                        <input type="email" placeholder="Enter email" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary transition-all">
+                        <button class="w-full bg-primary py-3 rounded-xl font-bold">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-slate-500">&copy; 2026 Lumina AI Agency. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-slate-500 hover:text-white transition-all"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-slate-500 hover:text-white transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-slate-500 hover:text-white transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

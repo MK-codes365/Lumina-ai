@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Lumina — Creative AI Design Agency</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050508',
+                        primary: '#A855F7',
+                        secondary: '#6366f1',
+                    },
+                    fontFamily: {
+                        heading: ['Sora', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glass { @apply bg-white/5 backdrop-blur-lg border border-white/10; }
+            .text-gradient { @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary; }
+            .reveal { @apply opacity-0 translate-y-8 transition-all duration-700 ease-out; }
+            .reveal.active { @apply opacity-100 translate-y-0; }
+        }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-dark text-white font-sans selection:bg-primary/30">
+
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 py-6 transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 no-underline group">
+                <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
+                    <i data-lucide="zap" class="w-7 h-7 text-white fill-white/20"></i>
+                </div>
+                <span class="font-heading font-bold text-2xl tracking-tighter text-white">LUMINA<span class="text-primary">.</span></span>
+            </a>
+            <ul class="hidden md:flex gap-8 list-none">
+                <li><a href="index.html" class="text-slate-400 hover:text-white">Home</a></li>
+                <li><a href="about.html" class="text-slate-400 hover:text-white">About</a></li>
+                <li><a href="services.html" class="text-primary font-medium">Services</a></li>
+                <li><a href="contact.html" class="text-slate-400 hover:text-white">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-20 container mx-auto px-6 text-center">
+        <span class="text-primary font-bold tracking-[0.2em] text-sm mb-4 block reveal">OUR SERVICES</span>
+        <h1 class="font-heading text-5xl md:text-7xl font-bold mb-6 reveal">Services Built for the <span class="text-gradient">Future</span></h1>
+    </section>
+
+    <section class="py-20">
+        <div class="container mx-auto px-6 space-y-32">
+            <!-- Service 1 -->
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div class="reveal">
+                    <span class="text-primary font-bold text-lg mb-4 block">01</span>
+                    <h2 class="font-heading text-4xl font-bold mb-6">AI-Powered <span class="text-gradient">UI/UX Design</span></h2>
+                    <p class="text-slate-400 text-lg mb-8">We rapidly prototype and iterate on interface designs, delivering pixel-perfect experiences 3x faster.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-slate-300"><i data-lucide="check-circle" class="text-primary"></i> User Research</li>
+                        <li class="flex items-center gap-3 text-slate-300"><i data-lucide="check-circle" class="text-primary"></i> AI Wireframing</li>
+                    </ul>
+                </div>
+                <div class="relative reveal order-first md:order-last">
+                    <div class="glass h-[400px] rounded-[2.5rem] overflow-hidden">
+                        <img src="assets/ui-ux.png" alt="UI UX" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+            <!-- Service 2 -->
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div class="relative reveal">
+                    <div class="glass h-[400px] rounded-[2.5rem] overflow-hidden">
+                        <img src="assets/branding.png" alt="Branding" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="reveal" style="transition-delay: 100ms">
+                    <span class="text-primary font-bold text-lg mb-4 block">02</span>
+                    <h2 class="font-heading text-4xl font-bold mb-6">Generative <span class="text-gradient">Branding</span></h2>
+                    <p class="text-slate-400 text-lg mb-8">AI-crafted identities that analyze market psychology to create unique, memorable brands.</p>
+                </div>
+            </div>
+            <!-- Service 3 -->
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div class="reveal">
+                    <span class="text-primary font-bold text-lg mb-4 block">03</span>
+                    <h2 class="font-heading text-4xl font-bold mb-6">Motion <span class="text-gradient">Graphics</span></h2>
+                    <p class="text-slate-400 text-lg mb-8">Breathe life into your digital products with AI-assisted animations and cinematic 3D renders.</p>
+                </div>
+                <div class="relative reveal">
+                    <div class="glass h-[400px] rounded-[2.5rem] overflow-hidden">
+                        <img src="assets/motion.png" alt="Motion" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-32 bg-white/[0.02]">
+        <div class="container mx-auto px-6">
+            <h2 class="font-heading text-4xl font-bold text-center mb-20">Simple, Transparent <span class="text-gradient">Pricing</span></h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="glass p-10 rounded-3xl reveal tilt-card transition-transform duration-200">
+                    <h3 class="text-xl font-bold mb-4">Starter</h3>
+                    <div class="text-4xl font-bold mb-8">$2,499<span class="text-lg text-slate-500">/mo</span></div>
+                    <ul class="space-y-4 mb-10 text-slate-400">
+                        <li>1 Active Project</li>
+                        <li>AI UI/UX Design</li>
+                    </ul>
+                    <a href="contact.html" class="block text-center border border-primary text-primary py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-all">Get Started</a>
+                </div>
+                <div class="glass p-10 rounded-3xl reveal border-primary shadow-2xl shadow-primary/20 scale-105 bg-white/[0.08] tilt-card transition-transform duration-200">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <h3 class="text-xl font-bold mb-4">Growth</h3>
+                    <div class="text-4xl font-bold mb-8">$4,999<span class="text-lg text-slate-500">/mo</span></div>
+                    <ul class="space-y-4 mb-10 text-slate-400">
+                        <li>3 Active Projects</li>
+                        <li>Full AI Suite</li>
+                    </ul>
+                    <a href="contact.html" class="block text-center bg-primary text-white py-3 rounded-xl font-bold">Get Started</a>
+                </div>
+                <div class="glass p-10 rounded-3xl reveal tilt-card transition-transform duration-200">
+                    <h3 class="text-xl font-bold mb-4">Enterprise</h3>
+                    <div class="text-4xl font-bold mb-8">Custom</div>
+                    <ul class="space-y-4 mb-10 text-slate-400">
+                        <li>Unlimited Projects</li>
+                        <li>Dedicated Pipeline</li>
+                    </ul>
+                    <a href="contact.html" class="block text-center border border-white/10 text-white py-3 rounded-xl font-bold hover:bg-white hover:text-dark transition-all">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
